@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD PROFIL MONGODB/PYTHON</title>
+</head>
+<body>
+    <h1>Gestion de Profils</h1>
+
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Nom" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="address" placeholder="Adresse" required>
+        
+        <div>
+            <label><input type="checkbox" id="notifs"> Activer les notifications</label>
+        </div>
+        <button type="submit">Créer un nouveau profil</button>
+    </form>
+    <br>
+    <div class="btn-filtre">
+        <button onclick="loadUsers()">Voir tous</button>
+        <input type="text" id="searchName" placeholder="Rechercher par nom...">
+        <button onclick="searchUser()">Rechercher</button>
+        <button onclick="loadUsers()">Réinitialiser</button>
+        <button class="btn-adv" onclick="loadAdvanced()">Filtrer</button>
+</div>
+
+    <div id="userList"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
